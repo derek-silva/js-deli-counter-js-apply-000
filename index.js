@@ -1,17 +1,20 @@
 var katzDeli = [];
+var number = 1
+  
+var takeANumber = function(katzDeli) {
+  katzDeli.push(number)
+  return 'Welcome you are number ' + number
+  number++;
+};
 
-var takeANumber = function(katzDeli, newCustomer) {
-    
-  if (katzDeli.length > 0);
-  katzDeli.push(newCustomer);
-  return ('Welcome, ' + newCustomer + '. You are number ' +  katzDeli.length + ' in line.')
-}
+takeANumber([])
+takeANumber([1])
 
 function nowServing (katzDeli) {
   
   if(katzDeli.length===0) { 
-  return 'There is nobody waiting to be served!'; 
-}
+   return 'There is nobody waiting to be served!'; 
+  }
  
   var customer = katzDeli.shift(); 
   return "Currently serving " + customer + "."; 
@@ -23,13 +26,13 @@ var currentLine = function (katzDeli) {
   return "The line is currently empty.";
 }
  
-  var customerAndNumber = [];
-  for (var i=0; i<katzDeli.length; i++) {
-  customerAndNumber.push(i + 1 + ". " + katzDeli[i])
+var customerAndNumber = [];
+for (var i=0; i<katzDeli.length; i++) {
+customerAndNumber.push(i + 1 + ". " + katzDeli[i]);
     
 }
-  return "The line is currently: " + customerAndNumber.join(", ");
-}
+return "The line is currently: " + customerAndNumber.join(", ");
+};
 
 
  
